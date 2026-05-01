@@ -1,0 +1,86 @@
+.algo-visual-container {
+  width: 100%;
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: rgba(17, 19, 21, 0.8);
+  overflow: hidden;
+  padding: var(--space-4);
+}
+
+.algo-visual-svg {
+  width: 100%;
+  display: block;
+}
+
+/* ── Linear / Logistic Regression visual ── */
+.vis-point { transition: r 0.2s ease, fill 0.2s ease; }
+.vis-point:hover { r: 7; }
+
+.vis-line {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawLine 1.2s ease forwards;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── Decision Tree visual ── */
+.tree-node {
+  transition: all 0.2s ease;
+}
+.tree-node:hover rect {
+  fill: rgba(143, 175, 122, 0.25);
+  stroke: var(--accent-sage);
+}
+
+.tree-edge {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawEdge 0.8s ease forwards;
+}
+
+@keyframes drawEdge {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── SVM visual ── */
+.svm-point { transition: r 0.2s ease; }
+.svm-point:hover { r: 8; }
+
+.svm-boundary {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawBoundary 1.5s ease forwards;
+}
+
+.svm-margin {
+  animation: fadeInMargin 1.5s ease 0.5s both;
+}
+
+@keyframes drawBoundary {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeInMargin {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Naive Bayes visual ── */
+.nb-bell {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawBell 1.5s ease forwards;
+}
+
+@keyframes drawBell {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ── Label animations ── */
+.vis-label {
+  animation: fadeIn 0.6s ease 0.8s both;
+}
